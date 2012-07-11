@@ -2,7 +2,6 @@
 {
     public interface ISocialStreamProvider
     {
-        string ProviderName { get; }
-         
+        StreamItemCollection GetStreamItemCollection();
     }
 }

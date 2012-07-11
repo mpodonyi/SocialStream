@@ -72,8 +72,11 @@ namespace SocialStream.Lib
         {
             foreach (var provider in importer.SocialStreamProviders)
             {
-                yield return provider.Metadata.ProviderName;
+                provider.Value.GetStreamItemCollection();
             }
+
+
+            return null;
 
         }
 

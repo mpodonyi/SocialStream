@@ -45,7 +45,6 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamFactory.cs" />
-    <Compile Include="StreamItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SocialStream.AddIn\SocialStream.AddIn.csproj">

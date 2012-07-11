@@ -1,0 +1,8 @@
+﻿<Window x:Class="SocialStream.Ui.Wpf.FBAuth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FBAuth" Height="300" Width="300">
+    <Grid>
+        <WebBrowser Height="225" HorizontalAlignment="Left" Margin="20,24,0,0" Name="webBrowser1" VerticalAlignment="Top" Width="246" />
+    </Grid>
+</Window>
