@@ -47,6 +47,12 @@
     <Compile Include="StreamFactory.cs" />
     <Compile Include="StreamItem.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SocialStream.AddIn\SocialStream.AddIn.csproj">
+      <Project>{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}</Project>
+      <Name>SocialStream.AddIn</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

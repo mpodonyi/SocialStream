@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{748C8728-FD50-42C2-A489-D06565F8BD0C}</ProjectGuid>
+    <ProjectGuid>{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SocialStream.AddIn.Facebook</RootNamespace>
-    <AssemblyName>SocialStream.AddIn.Facebook</AssemblyName>
+    <RootNamespace>SocialStream.AddIn</RootNamespace>
+    <AssemblyName>SocialStream.AddIn</AssemblyName>
     <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\SocialStream.Ui.Wpf\bin\Debug\AddInns\Facebook\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -43,14 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="FacebookSocialStreamProvider.cs" />
+    <Compile Include="ISocialStreamProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SocialStream.AddIn\SocialStream.AddIn.csproj">
-      <Project>{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}</Project>
-      <Name>SocialStream.AddIn</Name>
-    </ProjectReference>
+    <Compile Include="SocialStreamProviderAttribute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

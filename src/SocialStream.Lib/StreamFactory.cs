@@ -1,39 +1,79 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using SocialStream.AddIn;
 
 namespace SocialStream.Lib
 {
+    internal class Importer
+    {
+        [ImportMany(typeof(ISocialStreamProvider))]
+        internal IEnumerable<Lazy<ISocialStreamProvider, ISocialStreamProviderMetadata>> SocialStreamProviders;
+
+
+    }
+
+    public interface ISocialStreamProviderMetadata
+    {
+        string ProviderName { get; }
+    }
+
+
     public static class StreamFactory
     {
-        private static CompositionContainer container;
 
-        private  static void Compose()
-        {
-        //An aggregate catalog that combines multiple catalogs
-            var catalog = new DirectoryCatalog("");
-        //Adds all the parts found in the same assembly as the Program class
-        
 
-        //Create the CompositionContainer with the parts in the catalog
-            container = new CompositionContainer(catalog);
+        private static Importer importer = new Importer();
 
-        //Fill the imports of this object
-        try
+        static StreamFactory()
         {
-            container.ComposeParts();
-        }
-        catch (CompositionException compositionException)
-        {
-            Console.WriteLine(compositionException.ToString());
-        }
+            Compose();
         }
 
 
 
-        private IEnumerable<StreamItem> GetStreamItems()
+        private static void Compose()
         {
+            CompositionContainer container;
 
+            var pathToAddInns = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "AddInns");
+
+            //if (!Directory.Exists(pathToAddInns))
+            //    Directory.CreateDirectory(pathToAddInns);
+
+            IEnumerable<DirectoryCatalog> directoryCatalogs = from i in Directory.EnumerateDirectories(pathToAddInns, "*", SearchOption.TopDirectoryOnly)
+                                                              select new DirectoryCatalog(i,"*.dll");
+
+           // var catalog = new DirectoryCatalog(pathToAddInns,"*.dll");
+
+
+            var aggregateCatalog = new AggregateCatalog(directoryCatalogs);
+
+
+            container = new CompositionContainer(aggregateCatalog);
+
+            try
+            {
+                container.ComposeParts(importer);
+            }
+            catch (CompositionException compositionException)
+            {
+
+            }
+        }
+
+
+
+        public static IEnumerable<string> GetStreamItems()
+        {
+            foreach (var provider in importer.SocialStreamProviders)
+            {
+                yield return provider.Metadata.ProviderName;
+            }
 
         }
 

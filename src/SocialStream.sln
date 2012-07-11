@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialStream.Ui.Wpf", "Soci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialStream.AddIn.Facebook", "SocialStream.AddIn.Facebook\SocialStream.AddIn.Facebook.csproj", "{748C8728-FD50-42C2-A489-D06565F8BD0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialStream.AddIn", "SocialStream.AddIn\SocialStream.AddIn.csproj", "{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{748C8728-FD50-42C2-A489-D06565F8BD0C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{748C8728-FD50-42C2-A489-D06565F8BD0C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{748C8728-FD50-42C2-A489-D06565F8BD0C}.Release|x86.ActiveCfg = Release|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F812F6E8-6F2E-41EF-896A-6C50FF5FC688}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
