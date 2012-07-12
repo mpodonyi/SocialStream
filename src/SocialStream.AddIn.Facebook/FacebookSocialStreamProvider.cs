@@ -15,10 +15,10 @@ namespace SocialStream.AddIn.Facebook
                 ExtendAccesstoken();
 
 
-                string accesstoken = 
+                string accesstoken = "";
 
-                string appid = 
-                string appsecret = 
+                string appid = "";
+                string appsecret = ""; 
 
 
                 FacebookClient client = new FacebookClient();
@@ -45,10 +45,10 @@ namespace SocialStream.AddIn.Facebook
         {
             try
             {
-                string accesstoken = 
+                string accesstoken = "";
 
-                string appid = 
-                string appsecret = 
+                string appid = "";
+                string appsecret = "";
 
 
                 FacebookClient client = new FacebookClient();
